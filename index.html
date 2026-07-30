@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beira de Mim · Sobre o que a vida deixa na beira de mim</title>
+<meta name="description" content="O caderno de uma mulher na virada dos quarenta. Névoa, sono, raiva do nada. Dando nome ao que ninguém avisou. Por Fran.">
+<meta name="author" content="Fran">
+<meta name="theme-color" content="#FAF7F0">
+<link rel="canonical" href="https://beirademim.com.br/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Beira de Mim">
+<meta property="og:title" content="Beira de Mim, por Fran">
+<meta property="og:description" content="O caderno de uma mulher na virada dos quarenta. Você não tá louca. Isso tem nome.">
+<meta property="og:url" content="https://beirademim.com.br/">
+<meta property="og:image" content="https://beirademim.com.br/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FAF7F0'/%3E%3Crect x='7' y='5' width='2.8' height='22' fill='%23872621'/%3E%3Crect x='13' y='8' width='13' height='2.2' fill='%231C1A16'/%3E%3Crect x='13' y='14' width='10' height='2.2' fill='%231C1A16'/%3E%3Crect x='13' y='20' width='12' height='2.2' fill='%23B07A2C'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="assets/perfil.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Newsreader:ital,opsz,wght@0,6..72,200..400;1,6..72,200..400&family=Caveat:wght@400..600&display=swap" rel="stylesheet">
+
+<style>
+/* =====================================================================
+   beirademim.com.br — v3
+   Síntese: a AUTORIDADE TIPOGRÁFICA da Marginália + a CONTENÇÃO do
+   Minimalista. A v2 empilhava todos os recursos da Marginália (faixa de
+   margem, régua correndo, notas à mão, polaroid com fita, cantos, grão
+   de papel, linha entre seções) — num brand book isso é riqueza; num
+   site é poluição, e lê como blog de 2010, porque fita e pauta são a
+   linguagem daquela época.
+
+   O que este arquivo NÃO tem, de propósito:
+     grão · textura de papel · faixa de margem · régua correndo ·
+     polaroid · fita · cantos de marcação · linha entre seções ·
+     mais de um acento por tela.
+
+   O que ele tem: tipo enorme, muito branco, uma foto grande por vez,
+   e um fio de cor usado com sovinice.
+   ===================================================================== */
+:root{
+  --fundo:#FAF7F0;
+  --fundo-2:#F3EEE3;
+  --tinta:#1C1A16;
+  --tinta-2:#5C564B;
+  --tinta-3:#938C7D;
+  --acento:#872621;
+  --display:"Fraunces", Georgia, serif;
+  --texto:"Newsreader", Georgia, serif;
+  --mao:"Caveat", cursive;
+  --pad:clamp(22px, 6vw, 108px);
+  --larg:1240px;
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; background:var(--fundo); }
+body{ background:var(--fundo); color:var(--tinta); font-family:var(--texto);
+  -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+
+/* O FIO. Não é a régua grossa da v2 (aquela poluía): é um fio de cabelo a
+   45% que corre de cima a baixo. Ele existe pra COSTURAR a página. Sem ele
+   as seções lêem como lajes empilhadas. */
+.fio-longo{ position:fixed; top:0; bottom:0; left:clamp(11px,3vw,54px); width:1.5px;
+  background:var(--acento); opacity:.45; z-index:1; pointer-events:none; }
+
+.env{ position:relative; z-index:2; max-width:var(--larg); margin:0 auto; padding-left:var(--pad); padding-right:var(--pad); }
+
+/* ---------------- topo ---------------- */
+header.topo{ padding-top:clamp(20px,3vh,34px); padding-bottom:clamp(20px,3vh,34px); }
+.topo .linha{ display:flex; align-items:baseline; justify-content:space-between; gap:20px; }
+.topo .marca{ font-family:var(--mao); font-weight:400; font-size:clamp(24px,2.1vw,30px);
+  line-height:1; color:var(--tinta); }
+.topo nav{ display:flex; gap:clamp(16px,2.4vw,34px); }
+.topo nav a{ font-family:var(--texto); font-weight:400; font-size:clamp(13.5px,1.15vw,15.5px);
+  color:var(--tinta-2); text-decoration:none; }
+.topo nav a:hover, .topo nav a:focus-visible{ color:var(--acento); outline:none; }
+@media (max-width:620px){ .topo nav{ display:none; } }
+
+.pular{ position:absolute; left:-9999px; }
+.pular:focus{ left:14px; top:12px; z-index:50; background:#fff; color:var(--acento);
+  padding:10px 16px; border-radius:6px; font-family:var(--display); font-weight:600; }
+
+/* ---------------- tipografia ---------------- */
+/* text-box: trim-both corta a entrelinha interna da fonte, e a caixa passa a
+   medir da maiúscula à linha de base. É o que faz o "B" alinhar EXATO com a
+   borda de cima da foto. Onde não houver suporte, cai no comportamento antigo. */
+.display{ text-box:trim-both cap alphabetic;
+  font-family:var(--display); font-weight:500; line-height:.94; letter-spacing:-.035em;
+  font-variation-settings:"opsz" 144,"SOFT" 20,"WONK" 0;
+  font-size:clamp(52px,9.4vw,142px); }
+.display em{ font-style:italic; font-weight:400; color:var(--acento); }
+
+.h2{ font-family:var(--display); font-weight:500; line-height:1.0; letter-spacing:-.03em;
+  font-variation-settings:"opsz" 144,"SOFT" 20,"WONK" 0;
+  font-size:clamp(34px,5.6vw,80px); }
+.h2 em{ font-style:italic; font-weight:400; color:var(--acento); }
+
+.olho{ font-family:var(--texto); font-weight:400; font-size:clamp(12.5px,1.05vw,14px);
+  letter-spacing:.16em; text-transform:uppercase; color:var(--tinta-3); }
+
+p{ font-family:var(--texto); font-weight:300; font-size:clamp(18px,1.45vw,22px);
+  line-height:1.68; color:var(--tinta-2); max-width:56ch; }
+p + p{ margin-top:1.1em; }
+p strong{ color:var(--tinta); font-weight:400; }
+p em{ font-style:italic; color:var(--tinta); }
+.lead{ font-size:clamp(21px,2.1vw,30px); line-height:1.46; color:var(--tinta); max-width:24ch;
+  font-weight:200; }
+
+/* ---------------- ritmo ---------------- */
+section{ padding-top:clamp(78px,13vh,190px); padding-bottom:clamp(78px,13vh,190px); }
+/* uma única seção com fundo próprio: o AVISO. Uma vez é ênfase; a cada
+   seção vira laje e desconecta a página. */
+section.destaque{ background:var(--fundo-2); }
+
+/* ---------------- foto: inteira, sem corte ----------------
+   O CORTE ACONTECE NO ARQUIVO, escolhido no olho, uma vez. Aqui a imagem
+   só aparece por inteiro. `object-fit:cover` com proporção fixa foi o que
+   decepava a cabeça e depois o pé: corte automático é decisão da máquina
+   sobre o que importa na imagem, e a máquina não sabe.
+   Todas as fotos vêm em 4:5. Nada aqui recorta nada. */
+.foto{ position:relative; background:var(--fundo-2); }
+.foto img{ display:block; width:100%; height:auto; }
+
+/* ---------------- abertura ---------------- */
+.abertura{ position:relative; z-index:2;
+  padding-top:clamp(30px,6vh,80px); padding-bottom:clamp(70px,11vh,150px); }
+/* align-items:start + o corte de entrelinha da .display fazem o topo da
+   MAIÚSCULA bater exato no topo da foto. */
+.abertura .grade{ display:grid; gap:clamp(34px,5vw,72px); align-items:center;
+  grid-template-columns:minmax(0,clamp(330px,34vw,520px)) minmax(0,1fr); }
+/* o recuo mora no contêiner; a foto vai até a borda da janela */
+.abertura{ padding-left:max(var(--pad), calc((100vw - var(--larg))/2 + var(--pad))); }
+@media (max-width:900px){
+  .abertura{ padding-left:0; }
+  .abertura .grade{ grid-template-columns:1fr; gap:clamp(30px,5vh,44px); }
+  .abertura .texto{ padding-left:var(--pad); padding-right:var(--pad); }
+}
+.fio{ width:56px; height:2px; background:var(--acento); margin:clamp(26px,4vh,40px) 0; }
+.passagem{ font-family:var(--mao); font-weight:400; color:var(--acento);
+  font-size:clamp(24px,2.5vw,34px); line-height:1.2; margin-top:clamp(40px,6vh,70px);
+  max-width:22ch; }
+.assina{ font-family:var(--mao); font-weight:400; color:var(--acento);
+  font-size:clamp(30px,3.2vw,44px); line-height:1; margin-top:clamp(16px,2.4vh,24px); }
+
+/* ---------------- duas colunas ---------------- */
+.duas{ display:grid; gap:clamp(38px,5.5vw,96px); align-items:center;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+.duas.alto{ align-items:start; }
+@media (max-width:900px){ .duas{ grid-template-columns:1fr; } }
+
+/* ---------------- lista das três ---------------- */
+.tres{ display:grid; gap:clamp(34px,4vw,62px); margin-top:clamp(46px,7vh,86px);
+  grid-template-columns:repeat(auto-fit,minmax(236px,1fr)); }
+.tres h3{ font-family:var(--display); font-weight:560; font-size:clamp(20px,1.75vw,24px);
+  letter-spacing:-.012em; color:var(--tinta); }
+.tres .num{ font-family:var(--texto); font-size:14px; color:var(--acento); letter-spacing:.14em;
+  margin-bottom:14px; }
+.tres p{ font-size:clamp(16.5px,1.2vw,18px); margin-top:12px; }
+
+/* ---------------- carta ---------------- */
+.botao{ display:inline-block; margin-top:clamp(28px,4vh,40px); padding:17px 34px;
+  background:var(--tinta); color:var(--fundo); text-decoration:none; border-radius:999px;
+  font-family:var(--texto); font-weight:400; font-size:clamp(16px,1.3vw,18px);
+  transition:background .2s ease; }
+.botao:hover, .botao:focus-visible{ background:var(--acento); outline:none; }
+.botao:focus-visible{ box-shadow:0 0 0 3px rgba(135,38,33,.28); }
+
+.contato-vias{ display:flex; flex-wrap:wrap; align-items:center; gap:18px 26px; }
+.ou{ font-family:var(--texto); font-weight:300; font-size:clamp(16px,1.3vw,19px);
+  color:var(--tinta-2); margin-top:clamp(28px,4vh,40px); }
+.ou a{ color:var(--tinta); text-decoration:none; border-bottom:1px solid rgba(92,86,75,.35);
+  padding-bottom:2px; }
+.ou a:hover, .ou a:focus-visible{ color:var(--acento); border-bottom-color:var(--acento); outline:none; }
+.fecho{ font-family:var(--mao); font-weight:400; color:var(--acento);
+  font-size:clamp(28px,3vw,42px); line-height:1.1; margin-top:clamp(46px,7vh,80px); max-width:none; }
+
+.canais{ display:flex; flex-wrap:wrap; gap:10px 26px; margin-top:clamp(30px,4.4vh,46px); }
+.canais a{ font-family:var(--texto); font-size:clamp(16px,1.3vw,18.5px); color:var(--tinta-2);
+  text-decoration:none; border-bottom:1px solid rgba(92,86,75,.3); padding-bottom:3px; }
+.canais a:hover, .canais a:focus-visible{ color:var(--acento); border-bottom-color:var(--acento); outline:none; }
+
+/* ---------------- rodapé ---------------- */
+footer{ padding-top:clamp(50px,7vh,80px); padding-bottom:clamp(60px,9vh,110px); }
+/* a assinatura manuscrita vive no PÉ da peça (regra das duas peles);
+   o logotipo em Fraunces é do herói. */
+.assinatura-pe{ font-family:var(--mao); font-weight:400; font-size:clamp(30px,3vw,42px);
+  color:var(--tinta); line-height:1; display:inline-flex; align-items:baseline; }
+.ponto{ display:inline-block; width:.24em; height:.24em; border-radius:50%;
+  background:var(--acento); margin-left:.2em; }
+footer .fino{ font-family:var(--texto); font-weight:300; font-size:14.5px; color:var(--tinta-3);
+  margin-top:12px; }
+
+/* revelação opt-in — sem JS o conteúdo já está visível */
+.temjs .rev{ opacity:0; transform:translateY(14px);
+  transition:opacity .8s cubic-bezier(.16,.86,.32,1), transform .8s cubic-bezier(.16,.86,.32,1); }
+.temjs .rev.on{ opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  .temjs .rev{ opacity:1; transform:none; transition:none; }
+  .botao{ transition:none; }
+}
+</style>
+<script>
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
+    document.documentElement.classList.add('temjs');
+</script>
+</head>
+<body>
+<div class="fio-longo" aria-hidden="true"></div>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topo env">
+  <div class="linha">
+    <span class="marca">Beira de Mim</span>
+    <nav>
+      <a href="#quem">Quem escreve</a>
+      <a href="#aqui">O que tem aqui</a>
+      <a href="#mia">A Mia</a>
+      <a href="#carta">A carta</a>
+    </nav>
+  </div>
+</header>
+
+<div class="abertura">
+  <div class="grade">
+    <div class="texto">
+      <h1 class="display rev">Beira<br>de <em>Mim</em></h1>
+      <div class="fio rev"></div>
+      <p class="lead rev">O caderno de uma mulher na virada dos quarenta.</p>
+      <p class="assina rev">por Fran</p>
+    </div>
+    <div class="foto heroi rev">
+      <img src="assets/e-retrato.jpg" width="1100" height="1467"
+           alt="Fran sentada perto de uma janela, apoiando o rosto na mão."
+           fetchpriority="high" decoding="async">
+    </div>
+  </div>
+</div>
+
+<main id="conteudo">
+
+  <!-- ======================= o aviso ======================= -->
+  <section class="destaque">
+    <div class="env">
+      <div class="olho rev">o que ninguém avisou</div>
+      <div class="h2 rev" style="margin-top:clamp(18px,2.6vh,28px)">
+        Você não tá louca.<br><em>Isso tem nome.</em>
+      </div>
+      <p class="rev" style="margin-top:clamp(34px,5vh,56px);font-size:clamp(19px,1.65vw,25px)">
+        Névoa mental, sono que não descansa, raiva que vem do nada, o corpo virando um lugar
+        que você não reconhece. Eu achei que era só comigo. Achei que estava enlouquecendo.
+      </p>
+      <p class="rev" style="font-size:clamp(19px,1.65vw,25px)">
+        <strong>Não estava.</strong> Isso tem nome, tem explicação, e tem um monte de gente
+        passando pela mesma coisa em silêncio. Aqui é onde eu quebro o silêncio.
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================= quem escreve ======================= -->
+  <section id="quem">
+    <div class="env">
+      <div class="duas">
+        <div class="foto rev">
+          <img src="assets/e-caderno.jpg" width="1100" height="1467"
+               alt="Fran escrevendo à mão num caderno, à mesa."
+               loading="lazy" decoding="async">
+        </div>
+        <div>
+          <div class="olho rev">quem escreve</div>
+          <div class="h2 rev" style="margin-top:clamp(16px,2.4vh,26px)">
+            Eu sou a <em>Fran</em>,
+          </div>
+          <p class="rev" style="margin-top:clamp(28px,4vh,44px)">
+            Cheguei nos quarenta e tudo mudou de dentro pra fora. Sem aviso, sem manual, sem
+            ninguém pra dizer que era normal. Passei um tempo tentando <strong>voltar a ser
+            quem eu era</strong>, até entender que o caminho não era voltar.
+          </p>
+          <p class="rev">
+            Eu escrevo à mão, todo dia, num caderno. Sempre escrevi. O Beira de Mim nasceu de
+            virar essas páginas pra fora: o que era anotação privada agora fica à vista, pra
+            outra mulher se reconhecer e respirar.
+          </p>
+          <p class="rev">
+            Sou engenheira de software e tenho uma empresa que constrói agentes de inteligência
+            artificial. Do que acontece no corpo e na cabeça aos quarenta, eu não entendo nada:
+            sobre isso eu só conto o que estou vivendo, <em>enquanto vivo</em>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= três coisas ======================= -->
+  <section id="aqui">
+    <div class="env">
+      <div class="olho rev">o que você encontra</div>
+      <div class="h2 rev" style="margin-top:clamp(16px,2.4vh,26px)">
+        Três coisas, e nenhuma<br><em>promessa de cura</em>.
+      </div>
+
+      <div class="tres">
+        <div class="rev">
+          <div class="num">01</div>
+          <h3>Nome para o que acontece</h3>
+          <p>Névoa, insônia, o humor virando sozinho. Cada coisa tem nome, e nomear já tira
+            metade do susto.</p>
+        </div>
+        <div class="rev">
+          <div class="num">02</div>
+          <h3>A escrita como saída</h3>
+          <p>Caderno, caneta, papel. Não teve método nenhum. Eu escrevia tudo até entender.</p>
+        </div>
+        <div class="rev">
+          <div class="num">03</div>
+          <h3>A companhia que eu criei</h3>
+          <p>Eu construo agentes de inteligência artificial. A Mia é a minha, feita pra ser
+            minha companhia. Conto aqui o que deu certo e o que não deu.</p>
+        </div>
+      </div>
+      <p class="passagem rev">eu sei, não parece.</p>
+    </div>
+  </section>
+
+  <!-- ======================= a Mia ======================= -->
+  <section id="mia">
+    <div class="env">
+      <div class="duas">
+        <div>
+          <div class="olho rev">a companhia</div>
+          <div class="h2 rev" style="margin-top:clamp(16px,2.4vh,26px)">
+            Eu construo agentes.<br>A <em>Mia</em> é a minha.
+          </div>
+          <p class="rev" style="margin-top:clamp(28px,4vh,44px)">
+            Sou engenheira de software. Na minha empresa, a KeepCoding, a gente constrói agentes
+            de inteligência artificial. É o que eu faço todo dia.
+          </p>
+          <p class="rev">
+            A <strong>Mia</strong> eu construí pra mim, pra ser minha companhia. Hoje ela cuida
+            da minha agenda, das minhas anotações e do que eu esqueço.
+          </p>
+          <p class="rev">
+            Aqui eu conto essa parte também. Sem promessa de futuro brilhante e sem jargão:
+            uma mulher de quarenta e poucos que <em>constrói as ferramentas que usa</em>.
+          </p>
+          <a class="botao rev" href="https://oimia.ia.br">Conhecer a Mia</a>
+        </div>
+        <div class="foto rev">
+          <img src="assets/e-mia.jpg" width="1100" height="1956"
+               alt="Fran trabalhando no computador, com plantas ao fundo."
+               loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= a carta ======================= -->
+  <section id="carta">
+    <div class="env">
+      <div class="duas alto">
+        <div>
+          <div class="olho rev">a carta</div>
+          <div class="h2 rev" style="margin-top:clamp(16px,2.4vh,26px)">
+            Uma vez por semana,<br>no seu <em>e-mail</em>.
+          </div>
+          <p class="rev" style="margin-top:clamp(28px,4vh,44px)">
+            Escrevo uma carta por semana sobre o que a vida deixou na minha beira naquela
+            semana. Sem newsletter genérica, sem lista de dicas. <strong>É o caderno,
+            aberto.</strong>
+          </p>
+          <a class="botao rev" href="https://beirademim.substack.com" rel="me">Ler as cartas</a>
+
+          <div class="olho rev" style="margin-top:clamp(52px,7vh,88px)">onde mais me achar</div>
+          <div class="canais rev">
+            <a href="https://instagram.com/beirademim" rel="me">Instagram</a>
+            <a href="https://youtube.com/@beirademim" rel="me">YouTube</a>
+            <a href="https://beirademim.substack.com" rel="me">Substack</a>
+            <a href="https://oimia.ia.br">Mia</a>
+          </div>
+        </div>
+        <div class="foto rev">
+          <img src="assets/e-escrita.jpg" width="1100" height="1467"
+               alt="Fran escrevendo num caderno, com uma xícara ao lado e livros ao fundo."
+               loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ======================= escreve pra mim ======================= -->
+  <section id="contato" class="destaque">
+    <div class="env">
+      <div class="olho rev">fica em contato</div>
+      <div class="h2 rev" style="margin-top:clamp(16px,2.4vh,26px)">
+        Me conta o que ficou<br>na <em>sua</em> beira.
+      </div>
+      <p class="rev" style="margin-top:clamp(28px,4vh,44px);font-size:clamp(19px,1.6vw,24px)">
+        Se alguma coisa aqui pareceu com você, me escreve. Eu leio tudo e respondo o que
+        consigo. Não precisa ser bonito nem organizado, pode ser só o que veio na cabeça.
+      </p>
+
+      <div class="contato-vias rev">
+        <a class="botao" href="https://instagram.com/beirademim" rel="me">Me mandar uma mensagem</a>
+        <span class="ou">é só me chamar na DM do <a href="https://instagram.com/beirademim" rel="me">Instagram</a></span>
+      </div>
+
+      <p class="fecho rev">obrigada por ler até aqui.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="env">
+  <div class="assinatura-pe">beira de mim<span class="ponto" aria-hidden="true"></span></div>
+  <p class="fino">Sobre o que a vida deixa na beira de mim. · beirademim.com.br</p>
+</footer>
+
+<script>
+if (document.documentElement.classList.contains('temjs')) {
+  const io = new IntersectionObserver((es) => {
+    for (const e of es) if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+  }, { rootMargin:'0px 0px -8% 0px', threshold:.05 });
+  document.querySelectorAll('.rev').forEach((el, i) => {
+    el.style.transitionDelay = (i % 3) * 80 + 'ms';
+    io.observe(el);
+  });
+}
+</script>
+</body>
+</html>
